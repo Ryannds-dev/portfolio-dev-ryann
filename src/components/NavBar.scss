@@ -1,0 +1,140 @@
+nav.navbar {
+  padding: 18px 0;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  z-index: 10;
+  transition: 0.32s ease-in-out;
+
+  border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+
+  &.scrolled {
+    padding: 0px 0;
+    background-color: #fff;
+  }
+
+  .navbar-brand img {
+    height: 70px;
+    width: auto;
+    display: block;
+  }
+
+  .navbar-nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .nav-item {
+      .nav-link {
+        font-weight: 400;
+        color: #666;
+        letter-spacing: 0.8px;
+        padding: 0 25px;
+        font-size: 18px;
+        transition: 0.3s;
+
+        &:hover {
+          color: #121212;
+        }
+
+        &.active {
+          color: #121212;
+          font-weight: 700;
+        }
+      }
+    }
+  }
+}
+
+li.navbar-icons {
+  display: flex;
+  align-items: center;
+
+  button.connect {
+    font-weight: 700;
+    color: #121212;
+    border: 1px solid #121212;
+    padding: 18px 34px;
+    font-size: 18px;
+    margin-left: 18px;
+    position: relative;
+    background-color: transparent;
+    overflow: hidden; /* nécessaire pour le slide */
+    transition: color 0.3s ease-in-out;
+
+    span {
+      position: relative; /* nécessaire pour rester au-dessus */
+      z-index: 1;
+    }
+
+    &::before {
+      content: "";
+      width: 0%;
+      height: 100%;
+      position: absolute;
+      background-color: #121212; /* noir */
+      left: 0;
+      top: 0;
+      z-index: 0;
+      transition: width 0.3s ease-in-out;
+    }
+
+    &:hover {
+      color: #fff; /* texte blanc */
+    }
+
+    &:hover::before {
+      width: 100%;
+    }
+  }
+}
+
+.social-icon {
+  display: inline-block;
+  margin-left: 14px;
+}
+
+.social-icon a {
+  width: 42px;
+  height: 42px;
+  background: transparent; /* fond normal */
+  display: inline-flex;
+  border-radius: 50%;
+  margin-right: 6px;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  border: 1px solid #121212; /* bordure noire */
+  position: relative; /* nécessaire pour ::before */
+  overflow: hidden; /* coupe le cercle */
+  transition: 0.3s ease-in-out;
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-color: #121212; /* fond noir au hover */
+    border-radius: 50%;
+    transform: scale(0); /* part du centre */
+    transition: transform 0.3s ease-in-out;
+    z-index: 0;
+  }
+
+  &:hover::before {
+    transform: scale(1); /* remplit le cercle */
+  }
+
+  img {
+    width: 40%;
+    z-index: 1; /* au-dessus du fond */
+    position: relative; /* pour que z-index marche */
+    transition: 0.3s ease-in-out;
+  }
+
+  &:hover img {
+    filter: brightness(0) invert(1); /* logo blanc */
+  }
+}
