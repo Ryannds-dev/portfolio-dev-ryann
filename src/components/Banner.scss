@@ -1,0 +1,136 @@
+@use "../styles/variables" as *;
+
+.banner {
+  padding-top: 90px;
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+
+  background-image: url("../assets/img/background-banner.webp");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  .container-fluid {
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+
+  h1 {
+    font-size: 100px;
+    font-weight: 700;
+    letter-spacing: 0.8px;
+    line-height: 1;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    white-space: nowrap;
+  }
+
+  .tagline {
+    font-weight: 700;
+    letter-spacing: 0.8px;
+    padding: 8px 10px;
+    background: linear-gradient(
+      90.21deg,
+      rgba(170, 54, 124, 0.5) -5.91%,
+      rgba(74, 47, 189, 0.5)
+    );
+    border: 1.5px solid $primary;
+    font-size: 50px;
+    margin-bottom: 16px;
+    display: inline-block;
+  }
+
+  p {
+    color: $primary;
+    font-size: 20px;
+    margin-top: 20px;
+    letter-spacing: 0.8px;
+  }
+
+  button {
+    color: $primary;
+    font-weight: 700;
+    font-size: 20px;
+    margin-top: 60px;
+    letter-spacing: 0.8px;
+    display: flex;
+    align-items: center;
+
+    background: none;
+    border: none;
+
+    svg {
+      font-size: 25px;
+      margin-left: 10px;
+      transition: 0.3s ease-in-out;
+      line-height: 1;
+    }
+
+    &:hover svg {
+      margin-left: 25px;
+    }
+  }
+
+  img {
+    height: 100vh;
+    width: auto;
+  }
+}
+
+@media (max-width: 1780px) {
+  .banner {
+    .banner-left {
+      margin-top: 40px;
+      width: 100%;
+    }
+
+    h1 {
+      white-space: normal;
+      text-align: center;
+    }
+    .col-picture {
+      margin-right: 20px;
+    }
+  }
+}
+
+@media (max-width: 991.98px) {
+  .banner {
+    padding-top: 90px;
+    text-align: center;
+
+    h1 {
+      font-size: 48px;
+      line-height: 1.1;
+      text-align: center;
+    }
+
+    .tagline {
+      font-size: 20px;
+      padding: 6px 10px;
+    }
+
+    button {
+      justify-content: center;
+    }
+
+    img {
+      max-height: 60vh;
+      transform: none;
+      margin-top: 24px;
+    }
+
+    .col-picture {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+}

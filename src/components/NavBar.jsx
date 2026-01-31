@@ -30,7 +30,7 @@ function NavBar() {
 
   return (
     <nav
-      className={`navbar navbar-expand-lg navbar-light px-4 ${scrolled ? "scrolled" : ""} `}
+      className={`navbar navbar-expand-xl navbar-light px-5 ${scrolled ? "scrolled" : ""} `}
     >
       <a className="navbar-brand" href="#home">
         <img src={logoRyann} alt="Logo Ryann" />
@@ -65,6 +65,18 @@ function NavBar() {
           <li className="nav-item">
             <a
               className={
+                activeLink === "a-propos" ? "active nav-link" : "nav-link"
+              }
+              onClick={() => onUpdateActiveLink("a-propos")}
+              href="#a-propos"
+            >
+              À propos
+            </a>
+          </li>
+
+          <li className="nav-item">
+            <a
+              className={
                 activeLink === "competences" ? "active nav-link" : "nav-link"
               }
               onClick={() => onUpdateActiveLink("competences")}
@@ -77,24 +89,24 @@ function NavBar() {
           <li className="nav-item">
             <a
               className={
-                activeLink === "parcours" ? "active nav-link" : "nav-link"
-              }
-              onClick={() => onUpdateActiveLink("parcours")}
-              href="#parcours"
-            >
-              Parcours
-            </a>
-          </li>
-
-          <li className="nav-item">
-            <a
-              className={
                 activeLink === "projets" ? "active nav-link" : "nav-link"
               }
               onClick={() => onUpdateActiveLink("projets")}
               href="#projets"
             >
               Projets
+            </a>
+          </li>
+
+          <li className="nav-item">
+            <a
+              className={
+                activeLink === "parcours" ? "active nav-link" : "nav-link"
+              }
+              onClick={() => onUpdateActiveLink("parcours")}
+              href="#parcours"
+            >
+              Parcours
             </a>
           </li>
 
