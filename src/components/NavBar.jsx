@@ -32,7 +32,7 @@ function NavBar() {
     <nav
       className={`navbar navbar-expand-xl navbar-light px-5 ${scrolled ? "scrolled" : ""} `}
     >
-      <a className="navbar-brand" href="#home">
+      <a className="navbar-brand" href="#accueil">
         <img src={logoRyann} alt="Logo Ryann" />
       </a>
 
