@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import logoRyann from "../assets/img/logo-ryann.png";
 import linkedinLogo from "../assets/img/linkedin-logo.svg";
 import youtubeLogo from "../assets/img/youtube-logo.svg";
-import instagramLogo from "../assets/img/instagram-logo.svg";
+import githubLogo from "../assets/img/skills/github.svg";
 
 import "./NavBar.scss";
 
@@ -116,10 +116,10 @@ function NavBar() {
                 <img src={linkedinLogo} alt="linkedin logo" />
               </a>
               <a href="#">
-                <img src={youtubeLogo} alt="youtube logo" />
+                <img src={githubLogo} alt="github logo" />
               </a>
               <a href="#">
-                <img src={instagramLogo} alt="instagram logo" />
+                <img src={youtubeLogo} alt="youtube logo" />
               </a>
             </div>
             <button className="connect" onClick={() => console.log("connect")}>
