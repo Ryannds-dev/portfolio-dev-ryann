@@ -1,0 +1,71 @@
+@use "../styles/variables" as *;
+
+.footer {
+  background-color: $primary;
+  padding: 56px 0 40px;
+  text-align: center;
+
+  // Même technique que .banner pour sortir du max-width du #root
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+
+  // ── Logo en blanc ───────────────────────────
+  .footer-logo {
+    margin-bottom: 32px;
+
+    img {
+      height: 70px;
+      width: auto;
+      filter: brightness(0) invert(1);
+    }
+  }
+
+  // ── Icônes sociales (même pattern que .social-icon de la navbar, couleurs inversées) ──
+  .footer-icons {
+    display: flex;
+    justify-content: center;
+    gap: 14px;
+
+    a {
+      width: 46px;
+      height: 46px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid $white;
+      border-radius: 50%;
+      position: relative;
+      overflow: hidden;
+      transition: 0.3s ease-in-out;
+
+      // Cercle blanc qui grandit au hover
+      &::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background-color: $white;
+        border-radius: 50%;
+        transform: scale(0);
+        transition: transform 0.3s ease-in-out;
+        z-index: 0;
+      }
+
+      &:hover::before {
+        transform: scale(1);
+      }
+
+      // Icône blanche par défaut → noire au hover
+      img {
+        width: 40%;
+        z-index: 1;
+        position: relative;
+        filter: brightness(0) invert(1);
+        transition: filter 0.3s ease-in-out;
+      }
+
+      &:hover img {
+        filter: brightness(0);
+      }
+    }
+  }
+}

@@ -112,17 +112,25 @@ function NavBar() {
 
           <li className="navbar-icons">
             <div className="social-icon">
-              <a href="#">
+              <a
+                href="https://www.linkedin.com/in/ryann-dera-schtyk/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <img src={linkedinLogo} alt="linkedin logo" />
               </a>
-              <a href="#">
+              <a
+                href="https://github.com/Ryannds-dev"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <img src={githubLogo} alt="github logo" />
               </a>
-              <a href="#">
+              <a href="#" target="_blank" rel="noopener noreferrer">
                 <img src={youtubeLogo} alt="youtube logo" />
               </a>
             </div>
-            <button className="connect" onClick={() => console.log("connect")}>
+            <button className="connect" onClick={() => document.getElementById("contact").scrollIntoView({ behavior: "smooth" })}>
               <span>Me contacter</span>
             </button>
           </li>

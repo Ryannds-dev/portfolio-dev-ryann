@@ -1,0 +1,126 @@
+@use "../styles/variables" as *;
+
+.contact {
+  padding: 120px 0;
+  text-align: center;
+  color: $primary;
+
+  h2 {
+    font-size: 52px;
+    font-weight: 800;
+    margin-bottom: 60px;
+  }
+
+  .contact-form {
+    max-width: 680px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+  }
+
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    text-align: left;
+  }
+
+  label {
+    font-size: 13px;
+    font-weight: 700;
+    color: $text-muted;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  input,
+  textarea {
+    padding: 14px 18px;
+    border: 1.5px solid $border-light;
+    border-radius: 12px;
+    font-size: 16px;
+    font-family: inherit;
+    color: $primary;
+    background: $white;
+    transition:
+      border-color 0.3s ease,
+      box-shadow 0.3s ease;
+    outline: none;
+
+    &:focus {
+      border-color: $primary;
+      box-shadow: 0 0 0 3px rgba(18, 18, 18, 0.1);
+    }
+
+    &::placeholder {
+      color: rgba(18, 18, 18, 0.35);
+    }
+  }
+
+  textarea {
+    resize: vertical;
+    min-height: 150px;
+  }
+
+  // ── Bouton "Envoyer" — même style que .connect de la navbar ──
+  .submit-btn {
+    align-self: center;
+    font-weight: 700;
+    color: $primary;
+    border: 1px solid $primary;
+    padding: 18px 48px;
+    font-size: 18px;
+    position: relative;
+    background-color: transparent;
+    overflow: hidden;
+    cursor: pointer;
+    transition: color 0.3s ease-in-out;
+
+    span {
+      position: relative;
+      z-index: 1;
+    }
+
+    &::before {
+      content: "";
+      width: 0%;
+      height: 100%;
+      position: absolute;
+      background-color: $primary;
+      left: 0;
+      top: 0;
+      z-index: 0;
+      transition: width 0.3s ease-in-out;
+    }
+
+    &:hover {
+      color: $white;
+    }
+
+    &:hover::before {
+      width: 100%;
+    }
+  }
+
+  @media (max-width: 600px) {
+    h2 {
+      font-size: 36px;
+    }
+
+    .form-row {
+      grid-template-columns: 1fr;
+    }
+
+    .submit-btn {
+      align-self: stretch;
+      text-align: center;
+    }
+  }
+}

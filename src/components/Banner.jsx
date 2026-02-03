@@ -15,7 +15,7 @@ function Banner() {
               Je développe des sites et interfaces web en React, du design à
               l’intégration.
             </p>
-            <button onClick={() => console.log("connect")}>
+            <button onClick={() => document.getElementById("contact").scrollIntoView({ behavior: "smooth" })}>
               Me contacter
               <ArrowRightCircle size={25} />
             </button>

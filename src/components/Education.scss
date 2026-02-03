@@ -1,0 +1,189 @@
+@use "../styles/variables" as *;
+
+.education {
+  padding: 120px 0;
+  text-align: center;
+  color: $primary;
+
+  h2 {
+    font-size: 52px;
+    font-weight: 800;
+    margin-bottom: 80px;
+  }
+
+  // ── Ligne centrale ──────────────────────────
+  .timeline {
+    position: relative;
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 10px 0 40px;
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 3px;
+      top: 0;
+      bottom: 0;
+      background: $primary;
+      border-radius: 2px;
+    }
+  }
+
+  // ── Item commun ─────────────────────────────
+  .timeline-item {
+    position: relative;
+    width: 50%;
+    padding-bottom: 48px;
+
+    // Dot sur la ligne centrale
+    &::after {
+      content: "";
+      position: absolute;
+      top: 22px;
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      background: $white;
+      border: 3px solid $primary;
+      z-index: 2;
+      opacity: 0;
+      transform: scale(0);
+      transition:
+        opacity 0.3s ease,
+        transform 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+      transition-delay: var(--delay, 0s);
+    }
+
+    &.visible::after {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  // ── Côté gauche (index pair) ────────────────
+  .timeline-item.left {
+    text-align: right;
+    padding-right: 50px;
+
+    &::after {
+      right: -9px;
+    }
+
+    .timeline-card {
+      opacity: 0;
+      transform: translateX(-50px);
+      transition:
+        opacity 0.5s ease,
+        transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+      transition-delay: var(--delay, 0s);
+    }
+
+    &.visible .timeline-card {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  // ── Côté droit (index impair) ───────────────
+  .timeline-item.right {
+    margin-left: 50%;
+    text-align: left;
+    padding-left: 50px;
+
+    &::after {
+      left: -9px;
+    }
+
+    .timeline-card {
+      opacity: 0;
+      transform: translateX(50px);
+      transition:
+        opacity 0.5s ease,
+        transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+      transition-delay: var(--delay, 0s);
+    }
+
+    &.visible .timeline-card {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  // ── Carte ───────────────────────────────────
+  .timeline-card {
+    background: $white;
+    border: 1px solid $border-light;
+    border-radius: 16px;
+    padding: 28px;
+    box-shadow: 0 6px 28px rgba(0, 0, 0, 0.08);
+  }
+
+  .timeline-period {
+    display: inline-block;
+    background: rgba(18, 18, 18, 0.06);
+    border-radius: 999px;
+    padding: 5px 14px;
+    font-size: 13px;
+    font-weight: 700;
+    color: $text-muted;
+    letter-spacing: 0.8px;
+    margin-bottom: 12px;
+  }
+
+  .timeline-card h3 {
+    font-size: 22px;
+    font-weight: 800;
+    color: $primary;
+    margin-bottom: 4px;
+  }
+
+  .timeline-school {
+    font-size: 15px;
+    font-weight: 600;
+    color: $text-muted;
+    margin-bottom: 10px;
+  }
+
+  .timeline-card p {
+    font-size: 15px;
+    line-height: 1.65;
+    color: $text-muted;
+    margin: 0;
+  }
+
+  // ── Mobile : colonne unique, ligne à gauche ─
+  @media (max-width: 768px) {
+    h2 {
+      font-size: 36px;
+      margin-bottom: 50px;
+    }
+
+    .timeline::before {
+      left: 28px;
+    }
+
+    .timeline-item.left,
+    .timeline-item.right {
+      width: 100%;
+      margin-left: 0;
+      padding-left: 72px;
+      padding-right: 20px;
+      text-align: left;
+
+      &::after {
+        left: 19px;
+        right: auto;
+      }
+
+      .timeline-card {
+        transform: translateX(30px);
+      }
+
+      &.visible .timeline-card {
+        transform: translateX(0);
+      }
+    }
+  }
+}
