@@ -35,6 +35,7 @@ function ContactForm() {
         <div className="form-row">
           <input
             name="name"
+            aria-label="Votre nom"
             placeholder="Votre nom"
             value={formData.name}
             onChange={handleChange}
@@ -43,6 +44,7 @@ function ContactForm() {
           <input
             name="email"
             type="email"
+            aria-label="Votre email"
             placeholder="votre@email.com"
             value={formData.email}
             onChange={handleChange}
@@ -52,6 +54,7 @@ function ContactForm() {
 
         <input
           name="subject"
+          aria-label="Sujet de votre message"
           placeholder="Sujet de votre message"
           value={formData.subject}
           onChange={handleChange}
@@ -60,6 +63,7 @@ function ContactForm() {
 
         <textarea
           name="message"
+          aria-label="Votre message"
           placeholder="Votre message..."
           value={formData.message}
           onChange={handleChange}
