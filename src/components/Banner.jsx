@@ -12,10 +12,8 @@ function Banner() {
             <h1>Ryann DERA-SCHTYK</h1>
             <span className="tagline">Développeur Web</span>
             <p>
-              <p>
-                Je développe des applications web complètes, du front-end en
-                React jusqu’aux API back-end avec Node.js et bases de données.
-              </p>
+              Je développe des applications web complètes, du front-end en React
+              jusqu’aux API back-end avec Node.js et bases de données.
             </p>
             <button
               onClick={() =>
