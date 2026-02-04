@@ -2,7 +2,7 @@ export const EDUCATION = [
   {
     id: "openclassrooms",
     period: "Septembre 2025 – Février 2026",
-    title: "Développeur Web",
+    title: " Formation Développeur Web",
     school: "OpenClassrooms",
     description:
       "Formation professionnalisante basée sur des projets concrets en front-end et back-end : HTML, CSS, JavaScript, React, Node.js. Réalisation d'applications complètes proches de cas réels d'entreprise, avec accompagnement par un mentor et bonnes pratiques de développement.",

@@ -8,6 +8,8 @@ import Education from "./components/Education";
 import ContactForm from "./components/ContactForm";
 import Footer from "./components/Footer";
 
+import { Analytics } from "@vercel/analytics/react";
+
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
 import "bootstrap-icons/font/bootstrap-icons.css";
@@ -25,6 +27,7 @@ function App() {
         <ContactForm />
       </main>
       <Footer />
+      <Analytics />
     </div>
   );
 }
