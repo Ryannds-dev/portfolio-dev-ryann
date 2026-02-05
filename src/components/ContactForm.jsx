@@ -72,7 +72,7 @@ function ContactForm() {
         />
 
         <button type="submit" className="submit-btn">
-          Envoyer
+          <span>Envoyer</span>
         </button>
       </form>
     </section>
